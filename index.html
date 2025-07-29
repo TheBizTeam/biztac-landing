@@ -52,15 +52,46 @@ footer{text-align:center;padding:1.6rem;background:#222;color:#fff;margin-top:3.
 .reveal{opacity:0;transform:translateY(40px);transition:all .6s}
 .reveal.show{opacity:1;transform:none}
 @media(max-width:650px){h1{font-size:2.8rem}}
-</style>
+/* --- HERO SECTION --- */
+.hero {
+  /* keep your rocket / gradient bg here if you like */
+  background: radial-gradient(#e5ecf2 0%, #d7dadf 100%);
+  text-align: center;
+  padding: 90px 20px 70px;
+}
+
+/* floating logo */
+.hero-logo {
+  width: 240px;      /* adjust as needed */
+  height: auto;
+  background: none;  /* force fully transparent background */
+  filter: drop-shadow(0 8px 18px rgba(0,0,0,0.20));
+  margin-bottom: 40px;
+}
+
+/* headline */
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+.tagline {
+  font-family: 'Bangers', cursive;
+  font-size: 3.8rem;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+/* sub‑headline */
+.subtagline {
+  color: #00bfc5;
+  font-size: 1.25rem;
+  margin-top: 18px;
+}
 </head>
 <body>
-<header>
-  <div>
-    <img src="logo_glow.png" class="logo" alt="BizTAC Logo">
-    <h1>Manifest Growth</h1>
-    <p class="tag">Define what you do • Build systems that scale • Track real progress</p>
-  </div>
+<header class="hero">
+  <img src="logo.png" alt="BizTAC logo" class="hero-logo">
+  <h1 class="tagline">MANIFEST GROWTH</h1>
+  <p class="subtagline">
+    Define what you do &bull; Build systems that scale &bull; Track real progress
+  </p>
 </header>
 
 <section class="about reveal">
