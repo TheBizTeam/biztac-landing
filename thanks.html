@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Thank You – BizTAC</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --p:#00bfc5;        /* BizTAC teal */
+  --dot:#e1e5ff;      /* subtle background dots */
+  --bg:#fefeff;
+  --dark:#222;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Poppins,sans-serif;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:var(--bg);
+  color:var(--dark);
+  overflow:hidden;
+}
+/* dotted background like your main site */
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background-image:radial-gradient(var(--dot) 1px,transparent 1px);
+  background-size:18px 18px;
+  z-index:-2;
+}
+/* faint diagonal glow overlay */
+body::after{
+  content:'';
+  position:fixed;
+  inset:0;
+  background:linear-gradient(135deg,rgba(0,191,197,.05) 0%,rgba(0,191,197,.12) 100%);
+  z-index:-1;
+}
+
+/* card */
+.card{
+  background:#fff;
+  border:5px solid var(--p);
+  border-radius:24px;
+  padding:3rem 2.5rem;
+  max-width:420px;
+  width:88%;
+  text-align:center;
+  box-shadow:8px 8px 0 rgba(0,0,0,.12);
+  animation:pop .6s ease-out;
+}
+@keyframes pop{0%{transform:scale(.72);opacity:0}80%{transform:scale(1.05)}100%{transform:scale(1);opacity:1}}
+
+/* animated checkmark */
+.check{
+  width:80px;height:80px;
+  margin:0 auto 1.4rem;
+}
+.check circle{
+  fill:none;stroke:var(--p);stroke-width:6;stroke-dasharray:250;stroke-dashoffset:250;
+  animation:stroke 1.1s ease forwards;
+}
+.check polyline{
+  fill:none;stroke:var(--p);stroke-width:6;stroke-linecap:round;stroke-dasharray:50;stroke-dashoffset:50;
+  animation:stroke 1.1s .3s ease forwards;
+}
+@keyframes stroke{to{stroke-dashoffset:0}}
+
+h1{
+  font-family:Bangers,cursive;
+  font-size:2.8rem;
+  margin-bottom:.4rem;
+  color:var(--p);
+}
+p{font-size:1.1rem;margin-bottom:2.2rem}
+
+a.button{
+  display:inline-block;
+  padding:.9rem 2.4rem;
+  background:var(--p);
+  color:#fff;
+  text-decoration:none;
+  border-radius:12px;
+  font-weight:600;
+  box-shadow:4px 4px 0 rgba(0,0,0,.12);
+  transition:transform .2s;
+}
+a.button:hover{transform:translateY(-3px)}
+</style>
+</head>
+<body>
+
+  <div class="card">
+    <!-- SVG checkmark -->
+    <svg class="check" viewBox="0 0 80 80">
+      <circle cx="40" cy="40" r="33" />
+      <polyline points="25 42 36 52 56 30" />
+    </svg>
+
+    <h1>Thank&nbsp;You!</h1>
+    <p>Your message is on its way. <br>We’ll get back to you soon.</p>
+
+    <a class="button" href="https://www.biztac.org">Return&nbsp;Home</a>
+  </div>
+
+</body>
+</html>
